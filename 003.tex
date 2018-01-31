@@ -1,4 +1,25 @@
 ﻿\section{产品与服务}
+Python在当下时代已经是数据分析和AI研究的第一语言，很早就成为Web 开发、游戏脚本、计算机视觉、物联网管理和机器人开发的主流语言之一。随着用户可以预期的增长，python有机会在多个领域里登顶，继续扩大其潜在市场，成为未来机器学习的主流语言。
+\begin{figure}[H]
+\centering
+\includegraphics[width=12cm]{3_pythondatu.jpg}
+\caption{MicroPython}
+\label{MicroPython}
+\end{figure}
+
+
+Python也是众多主流语言中唯一一个战略定位明确，而且始终坚持原有战略定位不动摇的语言。其语言设计简洁优雅，对程序员友好，开发效率高；且拥有坚实的数值算法、图标和数据处理基础设施，建立了非常良好的生态环境。
+\begin{figure}[H]
+\centering
+\includegraphics[width=12cm]{3_pythonquantu.jpg}
+\caption{MicroPython}
+\label{MicroPython}
+\end{figure}
+
+
+
+
+
 本节将对核心产品——基于MicroPython的PYBoard开发板进行详细的原理说明.
 \subsection{研究开发}
 \subsubsection{产品描述}
@@ -25,7 +46,7 @@ MicroPython兼容性优良，可以让用户将代码从电脑易于移植进单
 \begin{minipage}{7.5cm}
 \centering
 \includegraphics[width=7.5cm]{3_otto01.jpg}
-\hspace{1cm}                        
+\hspace{1cm}
 \end{minipage}%
 }%
 \subfigure[]{
@@ -62,36 +83,36 @@ MicroPython兼容性优良，可以让用户将代码从电脑易于移植进单
       \end{figure}
 
       C语言对于普通用户来说，学习成本是较大的。而Python语言需要在PC或者其他嵌入式linux平台才可以运行，在单片机，比如说STM32，是不可运行的。所以MicroPython的出现，综合了单片机使用C语言的局限和Python的简单性，帮助用户解决了这个问题。MicroPython为面向对象的语言，将用户界面输入的python语句进行封装，利用VM虚拟机实时转换为单片机可识别的*.bin文件，使得python语言可在例如STM32之类的单片机上运行。
-      
+
 \item PYboard运行原理
 
       PYboard是MicroPython官方单片机支持电路板，编程环境为MicroPython。PYboard基于STM32F405RG微控制器，通过板载的microUSB接口供电以及进行数据传输，板载外设包括了一个MicroSD卡座接口、4个LED灯、两个机械按键、一个加速传感器、时钟模块，其它外设信号都通过板子上的金属通孔引出，具体的信号定义可以参考下图。
-      
+
       \begin{figure}[H]
       \centering
       \includegraphics[width=12cm]{3_pyboard.jpg}
       \caption{PYboard信号输出}
       \label{PYboard信号输出}
       \end{figure}
-      
+
       以STM32单片机为例，通过MicroUSB线连接上电脑后，设备管理器出现了一个需要安装驱动的虚拟串口，从电脑中看到pyboard的U盘。U盘中的有几个重要的文件boot.py、main.py、pybcdc.inf。若板子正常启动，上电先会运行boot.py，然后再配置USB，最后运行main.py。其中pybcdc是需要安装的驱动。
-      
+
       \begin{figure}[H]
       \centering
       \includegraphics[width=12cm]{3_upan.jpg}
       \caption{U盘中的文件}
       \label{U盘中的文件}
       \end{figure}
-      
+
       此时，将{\bf{MicroSD卡}}插入上电，pyboard会默认{\bf{从SD卡启动}}来代替原本的微控制器中的ROM中启动。
-      
+
       \begin{figure}[H]
       \centering
       \includegraphics[width=12cm]{3_sd.jpg}
       \caption{最终连接状态}
       \label{最终连接状态}
       \end{figure}
-      
+
       在SD卡中，通过使用python语言编辑main.py文件，添加相应脚本代码，就可以实现上电即运行程序的操作。
 \end{enumerate}
 
