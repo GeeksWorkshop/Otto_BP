@@ -1,10 +1,46 @@
-﻿\section{产品与服务}
-本节将对核心产品——基于MicroPython的开发板进行详细的原理说明.
-\subsection{研究开发}
-\subsubsection{产品描述}
-\begin{enumerate}[(1)]
-\item Python的优越性
+\documentclass[UTF-8,12pt,a4paper]{ctexart}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts,delarray,amsthm,amssymb}
+\usepackage{fancyhdr,graphicx,multirow,longtable,booktabs,cite,float,caption}
+\usepackage{titlesec,enumerate,xcolor,dsfont,chemarrow,amscd,subfigure}
+\usepackage{xeCJK}
+\usepackage[margin=1in]{geometry}
+\usepackage{url,bm,titletoc,wallpaper}
+\usepackage[font=small,labelfont=bf,labelsep=none]{caption}
+\usepackage[colorlinks,linkcolor=black]{hyperref}
+% ---------------------------------------------------------
+\captionsetup{font={footnotesize},labelfont={footnotesize}}
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+\CTEXsetup[number={\chinese{section}},format={\huge\bfseries}]{section}
+\titleformat{\subsection}{\Large\bfseries}{\S\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\large\bfseries}{\thesubsubsection}{1em}{}
+%----------------------------------------------------------
+\title{\CenterWallPaper{1.1}{fengmian.jpg}}
+\date{}
+\author{}
+\begin{document}
+\makeatletter
+\renewcommand{\tablename}{表}
+\renewcommand{\figurename}{图}
+\renewcommand{\thefigure}{\thesection.\arabic{figure}\quad}
+\renewcommand{\thetable}{\thesection.\arabic{table}\quad}
+\makeatother
 
+\pagestyle{empty}
+%\maketitle
+
+
+\zihao{4}
+\newpage
+
+%\ClearShipoutPicture
+%\CenterWallPaper{1.1}{ditu.png}
+\pagestyle{fancy}
+\renewcommand\contentsname{目录}
+\tableofcontents
+
+\section{行业背景}
 Python是典型的解释型编程语言，省去了编译的过程可以减少编辑、测试和排除错误的时间，大幅提高工作效率；在当下时代已经是数据分析和AI研究的第一语言，很早就成为Web 开发、游戏脚本、计算机视觉、物联网管理和机器人开发的主流语言之一。随着用户可以预期的增长，python 有机会在多个领域里登顶，继续扩大其潜在市场，成为未来机器学习的主流语言。
 \begin{figure}[H]
 \centering
@@ -21,13 +57,12 @@ Python也是众多主流语言中唯一一个战略定位明确，而且始终�
 \label{Python算法库}
 \end{figure}
 
-\item 机器人编程语言
+首先，至少会一门编程语言。机器人的开发语言一般为C、C++、C++ Builder、VB、VC等语言。其次至少要对一种控制器使用熟练。STM32、PLC、PMAC等是市面上常用的语言。但是机器人语言品种繁多，而且新的语言层出不穷。这是因为机器人的功能不断拓展，需要新的语言来配合其工作。另一方面，机器人语言多是针对某种类型的具体机器人而开发的，所以机器人语言的通用性很差，几乎一种新的机器人问世，就有一种新的机器人语言与之配套。而且各家公司的机器人编程语言都不相同，自成一套系统，彼此之间交流困难重重。Python作为
 
-      首先，至少会一门编程语言。机器人的开发语言一般为C、C++、C++ Builder、VB、VC等语言。其次至少要对一种控制器使用熟练。STM32、PLC、PMAC等是市面上常用的语言。但是机器人语言品种繁多，而且新的语言层出不穷。这是因为机器人的功能不断拓展，需要新的语言来配合其工作。另一方面，机器人语言多是针对某种类型的具体机器人而开发的，所以机器人语言的通用性很差，几乎一种新的机器人问世，就有一种新的机器人语言与之配套。而且各家公司的机器人编程语言都不相同，自成一套系统，彼此之间交流困难重重。Python作为
-
-
-\item Micropython简介
-
+\section{产品与服务}
+本节将对核心产品——基于MicroPython的开发板进行详细的原理说明.
+\subsection{研究开发}
+\subsubsection{产品描述}
 MicroPython是包括的Python标准库，并可在微控制器和约束环境下实现优化运行的精干高效的Python的编程语言.
 MicroPython兼容性优良，可以让用户将代码从电脑易于移植进单片机或嵌入系统.
 
@@ -42,6 +77,8 @@ MicroPython兼容性优良，可以让用户将代码从电脑易于移植进单
 不同于传统的微控制器控制需要重新修改、编译、上传程序，MicroPython脚本语言可实现实时的操作，去掉繁琐的流程，操作更加简单化.
 用户完全可以通过MicroPython语言实现硬件底层的访问和控制，比如说控制LED 灯泡、LCD 显示器、读取电压、控制电机、访问SD卡等.
 由于MicroPython的简约特性，用户完全可以在学习脚本语言的同时，进行个人兴趣DIY制作，减少了学习时间和成本，增强了编程的体验感，在最短时间内看到学习成果的体现.
+
+RoboPY是由本团队遵守MicroPython的MIT协议定制开发的一款微控制器板子，在保持原有硬件特点的基础上增加了SWD接口，便于烧写RoboPY的固件(兼容MicroPython的固件).
 
 以Otto机器人为例，借助MicroPython平台，用户可以自主设计小型玩具机器人，简单且易于操作，互动性和趣味性较强。
 
@@ -64,8 +101,6 @@ MicroPython兼容性优良，可以让用户将代码从电脑易于移植进单
 \caption{基于MicroPython的Otto机器人}
 \label{基于MicroPython的Otto机器人}
 \end{figure}
-
-\end{enumerate}
 \subsubsection{产品原理}
 \begin{enumerate}[(1)]
 \item MicroPython编译原理
@@ -144,9 +179,6 @@ MicroPython兼容性优良，可以让用户将代码从电脑易于移植进单
 
 \end{enumerate}
 
-\subsection{资金需求}
-
-
 
 \subsection{服务支持}
 
@@ -164,3 +196,7 @@ MicroPython兼容性优良，可以让用户将代码从电脑易于移植进单
 
       设立专门的组织结构，选派业务素质高、责任心强的人员负责售后管理，实施定人、定责、定任务、定范围的岗位责任制.讨论建立定期巡回制度、质量跟踪制度、定期座谈会制度、来访接待制度、零配件供应制度、“包退、包换、包修”制度、销售档案制度等，明确服务职责，规范服务行为，完善服务流程.
 \end{enumerate}
+
+
+\end{document}
+% ----------------------------------------------------------------
